@@ -1,0 +1,8 @@
+const Types = Object.freeze({
+  UPDATE_ROW: "UPDATE_ROW",
+  UPDATE_COL: "UPDATE_COL",
+  UPDATE_DIFFICULTY: "UPDATE_DIFFICULTY",
+  TOGGLE_GAME_STATE: "TOGGLE_GAME_STATE",
+});
+
+export default Types;
