@@ -2,8 +2,8 @@ import { getGame } from "../game/gameUtils";
 import Types from "./types";
 
 export const initState = {
-  row: "20",
-  col: "20",
+  row: "6",
+  col: "6",
   difficulty: "8",
   gameStarted: false,
 };

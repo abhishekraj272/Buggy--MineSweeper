@@ -1,11 +1,18 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import "./Menu.css";
 import { AppContext } from "./../../context/context";
 import { updateCol, updateDiff, updateRow } from "./../../context/action";
 import { getDifficulty } from "../../game/utils";
+import useBreakpoint from "../../hooks/useBreakpoint";
 
 function Menu() {
   const { state, dispatch } = useContext(AppContext);
+  const { row, col } = useBreakpoint();
+
+  useEffect(() => {
+    dispatch(updateRow(row));
+    dispatch(updateCol(col));
+  }, [row, col, dispatch]);
 
   return (
     <div className="menu glassEffect">
@@ -18,7 +25,7 @@ function Menu() {
           onChange={(e) => dispatch(updateRow(e.target.value))}
           min="6"
           step="2"
-          max="20"
+          max={row}
           disabled={state.gameStarted}
         />
       </div>
@@ -32,7 +39,7 @@ function Menu() {
           onChange={(e) => dispatch(updateCol(e.target.value))}
           min="6"
           step="2"
-          max="20"
+          max={col}
           disabled={state.gameStarted}
         />
       </div>

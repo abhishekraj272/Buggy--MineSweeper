@@ -15,7 +15,7 @@ function PlayArea() {
 
   const handleCellClick = (e) => {
     if (!state.gameStarted) {
-      toast("Please Start the Game First", { icon: "🙃" });
+      toast("Please Start the Game", { icon: "🙃" });
       return;
     }
     if (e.target.getAttribute("data-bomb") === "1") {
