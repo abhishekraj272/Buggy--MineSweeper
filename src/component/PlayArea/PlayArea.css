@@ -42,8 +42,12 @@
   width: 20px;
   height: 20px;
   cursor: pointer;
-  transition: all 100ms ease-in;
   color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .playArea__board td:hover {
@@ -53,6 +57,7 @@
 .cell-revealed {
   background-color: #f5e79d !important;
   color: blue !important;
+  cursor: default !important;
 }
 
 @media all and (max-width: 30em) {

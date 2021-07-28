@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import "./Menu.css";
 import { AppContext } from "./../../context/context";
 import { updateCol, updateDiff, updateRow } from "./../../context/action";
+import { getDifficulty } from "../../game/utils";
 
 function Menu() {
   const { state, dispatch } = useContext(AppContext);
@@ -37,7 +38,9 @@ function Menu() {
       </div>
 
       <div>
-        <label htmlFor="difficultySelect">Difficulty</label>
+        <label htmlFor="difficultySelect">
+          Difficulty ({getDifficulty(state.difficulty)})
+        </label>
         <input
           id="difficultySelect"
           type="range"
